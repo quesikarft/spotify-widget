@@ -20,7 +20,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     position: fixed;
-    top: 0;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
@@ -32,12 +32,12 @@ body {
     position: fixed;
     bottom: 20px;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1); /* FIX: kein scale(3) mehr */
+    transform: translateX(-50%);
     width: 90%;
     max-width: 450px;
     filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8));
     border-radius: var(--corner-radius);
-    background: rgba(0, 0, 0, 0.5); /* überall */
+    background: rgba(0, 0, 0, 0.5);
     opacity: 1;
     z-index: 10;
 }
@@ -47,14 +47,17 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 800px; /* länger */
+    width: 100%;
+    height: 100%;
     z-index: -1;
     border-radius: var(--corner-radius);
     opacity: 0.9;
+    overflow: hidden;
 }
 
 #backgroundImage {
     position: absolute;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     filter: blur(20px);
@@ -65,7 +68,7 @@ body {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1); /* FIX */
+    transform: translate(-50%, -50%);
     width: var(--album-art-size);
     height: var(--album-art-size);
     border-radius: var(--corner-radius);
@@ -75,6 +78,7 @@ body {
 }
 
 #albumArt {
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -82,9 +86,9 @@ body {
 /* Song-Info Box */
 #songInfoBox {
     position: relative;
-    width: 140%;
+    width: 100%;
     min-height: 120px;
-    padding: 60px 20px 20px 20px; /* Platz für Album-Art */
+    padding: 60px 20px 20px 20px;
     border-radius: var(--corner-radius);
     color: white;
 }
@@ -100,6 +104,8 @@ body {
     font-size: 16px;
     font-weight: 400;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #songLabel {
@@ -138,12 +144,12 @@ body {
 
 #progressTime {
     position: absolute;
+    left: 0;
 }
 
 #timeRemaining {
     position: absolute;
-    width: 100%;
-    text-align: right;
+    right: 0;
 }
 
 /* Fade Effekte */
