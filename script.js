@@ -243,7 +243,7 @@ window.addEventListener("resize", resize);
 
 resize();
 function resize() {
-	outer.style.transform = 'translate(-50%, -350%) scale(1)';
+	outer.style.transform = 'translate(-50%, 50%) scale(1)';
 }
 
 
