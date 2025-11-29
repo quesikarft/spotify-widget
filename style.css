@@ -16,35 +16,41 @@ body {
 	padding: 10px;
 	border-radius: 10px;
 	position: absolute;
-	top: 10%;
-	left: 10%;
-	transform: translate(-90%, -90%);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	opacity: 0;
 }
 
 #mainContainer {
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-	display: flex;
-	position: absolute;
-	height: var(--album-art-size);
-	margin: 20px;
-	filter: drop-shadow(15px 15px 7px rgba(0, 0, 0, 1));
-	width: 100%;
-	max-width: 500px;
-	bottom: calc(50% - 20px);
-	left: 50%;
-	opacity: 0;
-	transition: all 0.5s ease;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    position: absolute;
+    height: var(--album-art-size);
+    margin: 20px;
+    filter: drop-shadow(15px 15px 7px rgba(0, 0, 0, 1));
+    width: 100%;
+    max-width: 500px;
+    bottom: calc(50% - 20px);
+    left: 50%;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+#mainContainer {
+    width: 800px; /* Beispiel */
+    height: calc(800px * 9 / 16); /* automatisch 16:9 */
+    max-width: 100%; /* passt sich dem Bildschirm an */
+    display: flex;
+    flex-direction: row; /* Album Art links, Text rechts */
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    margin: 0 auto; /* zentriert horizontal */
 }
 
 #albumArtBox {
-	background: rgba(0, 0, 0, 0.5);
-	position: relative;
-	border-radius: var(--corner-radius);
-	overflow: hidden;
-	margin: 0px 8px 0px 0px;
-	object-fit: cover;
-	width: var(--album-art-size);
+    width: calc(var(--album-art-size)); 
+    height: 100%; /* passt sich Höhe des Containers an */
 }
 
 #albumArt {
@@ -67,27 +73,16 @@ body {
 }
 
 #songInfoBox {
-	position: relative;
-	color: white;
-	width: calc(100% - 125px);
-	display: flex;
-	flex-direction: column;
-	flex: 0 1 auto;
-	justify-content: center;
-	z-index: 1;
-	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-	overflow: hidden;
-	z-index: 4;
+    width: calc(100% - var(--album-art-size) - 40px); /* restliche Breite */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #songInfo {
-	background: rgba(0, 0, 0, 0.5);
-	opacity: 0.9;
-	position: relative;
-	border-radius: var(--corner-radius);
-	padding: 0px 20px;
-	height: 100%;
-	overflow: hidden;
+    height: 100%; /* volle Container-Höhe */
+    padding: 10px 20px; /* optional anpassen */
 }
 
 #IAmRunningOutOfNamesForTheseBoxes {
