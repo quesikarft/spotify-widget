@@ -30,11 +30,11 @@ body {
 /* Haupt-Widget */
 #mainContainer {
     position: fixed;
-    bottom: 80px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 95%;
-    max-width: 500px;
+    width: 90%;
+    max-width: 450px;
     filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8));
     border-radius: var(--corner-radius);
     background: rgba(0, 0, 0, 0.5);
@@ -87,8 +87,8 @@ body {
 #songInfoBox {
     position: relative;
     width: 100%;
-    min-height: 150px;
-    padding: 60px 20px 30px 20px;
+    min-height: 120px;
+    padding: 60px 20px 20px 20px;
     border-radius: var(--corner-radius);
     color: white;
 }
