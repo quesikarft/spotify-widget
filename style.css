@@ -68,9 +68,9 @@ body {
 /* Album-Art oben */
 #albumArtBox {
     position: absolute;
-    top: -50px; /* über Song-InfoBox */
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;          /* Startpunkt oben im Container */
+    left: 50%;       /* horizontal zentrieren */
+    transform: translateX(-50%) translateY(-50%) scale(1); /* nur 1x skaliert */
     width: var(--album-art-size);
     height: var(--album-art-size);
     border-radius: var(--corner-radius);
