@@ -24,8 +24,6 @@ body {
 
 #mainContainer {
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-	display: flex;
-	position: absolute;
 	height: var(--album-art-size);
 	margin: 20px;
 	filter: drop-shadow(15px 15px 7px rgba(0, 0, 0, 1));
@@ -35,6 +33,14 @@ body {
 	left: 50%;
 	opacity: 0;
 	transition: all 0.5s ease;
+	width: 90%;            /* z.B. 90% der Fensterbreite */
+  	max-width: 640px;      /* optional maximale Breite */
+  	aspect-ratio: 16 / 9;  /* Höhe passt automatisch */
+  	position: relative;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: space-between;
 }
 
 #albumArtBox {
@@ -101,22 +107,23 @@ body {
 }
 
 #backgroundArt {
-	position: absolute;
-	height: 5000%;
-	width: 100%;
-	border-radius: var(--corner-radius);
-	overflow: hidden;
-	z-index: -1;
-	opacity: 0.9;
+  position: absolute;
+  width: 100%;          /* volle Breite des Containers */
+  aspect-ratio: 16 / 9; /* Höhe automatisch für 16:9 */
+  border-radius: var(--corner-radius);
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0.9;
 }
 
 #backgroundImage {
-	filter: blur(20px);
-	position: absolute;
-	width: 140%;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* Bild wird zugeschnitten, füllt aber komplett */
+  top: 0;
+  left: 0;
+  filter: blur(20px);  /* optional */
 }
 
 #backgroundImageBack {
