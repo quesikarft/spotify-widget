@@ -48,7 +48,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 500px; /* länger */
+    height: 1000px; /* länger */
     z-index: -1;
     border-radius: var(--corner-radius);
     overflow: hidden;
