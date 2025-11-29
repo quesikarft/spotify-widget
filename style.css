@@ -47,7 +47,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     height: 800px; /* länger */
     z-index: -1;
     border-radius: var(--corner-radius);
