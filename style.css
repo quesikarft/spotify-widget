@@ -32,14 +32,13 @@ body {
     position: fixed; /* bleibt im Viewport */
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -350%) scale(1);
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 500px;
     filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.8));
     border-radius: var(--corner-radius);
-    overflow: hidden;
     background: rgba(0, 0, 0, 0.5); /* halbtransparent überall */
     opacity: 1;
     z-index: 10;
@@ -94,7 +93,6 @@ body {
     padding: 60px 20px 20px 20px; /* Platz oben für Album-Art */
     border-radius: var(--corner-radius);
     color: white;
-    overflow: hidden;
 }
 
 /* Text im Song-Info */
