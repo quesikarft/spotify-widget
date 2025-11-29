@@ -103,22 +103,25 @@ body {
 }
 
 #backgroundArt {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	border-radius: var(--corner-radius);
-	overflow: hidden;
-	z-index: -1;
-	opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300%; /* oder eine feste Pixel-Höhe z.B. 600px */
+    border-radius: var(--corner-radius);
+    overflow: hidden;
+    z-index: -1; /* immer hinter dem Text */
+    opacity: 0.9;
 }
 
 #backgroundImage {
-	filter: blur(20px);
-	position: absolute;
-	width: 140%;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
+    filter: blur(20px);
+    width: 100%;
+    height: 100%; /* füllt jetzt das größere Background-Art */
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 #backgroundImageBack {
