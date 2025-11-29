@@ -28,7 +28,7 @@ body {
 	margin: 20px;
 	filter: drop-shadow(15px 15px 7px rgba(0, 0, 0, 1));
 	width: 100%;
-	height: 100%;
+	height: 20%;
 	max-width: 500px;
 	bottom: calc(50% - 20px);
 	left: 50%;
@@ -37,11 +37,11 @@ body {
 }
 
 #albumArtBox {
-    position: absolute; /* über dem Song-Info-Box */
-    top: -20px;         /* nach oben verschoben */
-    left: 50%;          /* zentriert */
-    transform: translateX(-50%); /* perfekt zentriert */
-    z-index: 5;          /* über Song-Info */
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
     width: var(--album-art-size);
     height: var(--album-art-size);
     border-radius: var(--corner-radius);
