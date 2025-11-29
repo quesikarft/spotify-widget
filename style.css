@@ -11,14 +11,14 @@ justify-content: center;
 align-items: center;
 height: 100vh;
 margin: 0;
-background: #000; /* Hintergrundfarbe für den gesamten Body */
+background: #000;
 }
 
 #mainContainer {
 position: relative;
 width: 90%;
 max-width: var(--widget-max-width);
-aspect-ratio: 16 / 9; /* 16:9 Verhältnis /
+aspect-ratio: 16 / 9;
 display: flex;
 flex-direction: column; / Text oben, Album-Art unten /
 justify-content: flex-start;
@@ -36,13 +36,13 @@ left: 0;
 width: 100%;
 height: 100%;
 object-fit: cover;
-filter: blur(20px); /* Hintergrund verschwommen /
+filter: blur(20px);
 z-index: 1; / Hintergrund hinter Inhalt */
 }
 
 #songInfoBox {
 position: relative;
-z-index: 2; /* über Hintergrund /
+z-index: 2;
 width: 90%;
 text-align: center;
 padding: 10px 20px;
@@ -53,7 +53,7 @@ margin-top: 10px; / Abstand zum oberen Inhalt */
 
 #songLabel {
 font-weight: bold;
-font-size: 2vw; /* skaliert mit Containerbreite /
+font-size: 2vw;
 color: #fff; / weiße Schriftfarbe /
 overflow: hidden;
 text-overflow: ellipsis;
@@ -61,14 +61,14 @@ white-space: nowrap; / verhindert Zeilenumbruch */
 }
 
 #artistLabel {
-font-size: 1.5vw; /* skaliert mit Containerbreite /
+font-size: 1.5vw;
 font-weight: 400;
 color: #fff; / weiße Schriftfarbe /
 margin-top: 5px; / Abstand zum Songtitel */
 }
 
 #albumArtBox {
-width: 30%; /* max 30% der Containerbreite /
+width: 30%;
 max-width: var(--album-art-size);
 aspect-ratio: 1 / 1; / quadratische Fläche für Album-Art /
 border-radius: var(--corner-radius);
@@ -79,7 +79,7 @@ z-index: 2; / über Hintergrund */
 }
 
 #albumArt {
-width: 100%; /* gesamte Breite der Box /
+width: 100%;
 height: 100%; / gesamte Höhe der Box /
 object-fit: cover; / Bildfüllung */
 }
@@ -87,14 +87,14 @@ object-fit: cover; / Bildfüllung */
 #progressBg {
 width: 90%;
 height: 5px;
-background-color: #1F1F1F; /* dunkler Hintergrund für Fortschrittsleiste /
+background-color: #1F1F1F;
 border-radius: 5px;
 margin: 10px auto 5px auto; / Zentriert mit oberen und unteren Abstand /
 z-index: 2; / über Hintergrund */
 }
 
 #progressBar {
-width: 0%; /* initialer Fortschritt (0%) /
+width: 0%;
 height: 5px;
 border-radius: 5px;
 background-color: #ffffff; / weiße Fortschrittsleiste /
@@ -105,20 +105,19 @@ z-index: 2; / über Hintergrund */
 #times {
 width: 90%;
 display: flex;
-justify-content: space-between; /* Gleichmäßige Verteilung /
+justify-content: space-between;
 font-size: 1vw; / skaliert mit Containerbreite /
 font-weight: 700;
 margin-bottom: 10px; / Abstand nach unten /
 z-index: 2; / über Hintergrund */
 }
 
-/* Sichtbarkeitsanimationen /
 .text-show {
 opacity: 1; / vollständig sichtbar /
 transition: opacity 0.25s ease; / sanfte Übergangseffekte */
 }
 
 .text-fade {
-opacity: 0; /* unsichtbar /
+opacity: 0;
 transition: opacity 0.25s ease; / sanfte Übergangseffekte */
 }
