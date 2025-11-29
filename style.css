@@ -102,7 +102,7 @@ body {
 
 #backgroundArt {
 	position: absolute;
-	height: 500%;
+	height: 5000%;
 	width: 100%;
 	border-radius: var(--corner-radius);
 	overflow: hidden;
