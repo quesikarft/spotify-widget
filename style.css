@@ -69,18 +69,19 @@ body {
 }
 
 #songInfoBox {
-	position: relative;
-	color: white;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	flex: 0 1 auto;
-	justify-content: center;
-	z-index: 1;
-	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-	overflow: hidden;
-	z-index: 4;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: var(--corner-radius);
+}
+
+#IAmRunningOutOfNamesForTheseBoxes {
+    position: absolute; /* Text bleibt an alter Stelle */
+    top: 50%;           /* zentriert vertikal */
+    left: 20px;         /* Abstand vom linken Rand */
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
 #songInfo {
