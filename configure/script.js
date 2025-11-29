@@ -8,9 +8,9 @@ const urlParams = new URLSearchParams(queryString);
 const code = urlParams.get("code") || "";
 
 const baseURL = "https://quesikarft.github.io/spotify-widget";
-const redirect_uri = `${baseURL}/configure`;
-let refresh_token = "21e406b6e7954361ab92d91a53431a67";
-let access_token = "eedba84a1da34f69a9ba7eaa11b7d386";
+const redirect_uri = `${baseURL}/configure/`;
+let refresh_token = "";
+let access_token = "";
 let browserSourceURL = "";
 
 
