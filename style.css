@@ -1,94 +1,32 @@
 * {
   --corner-radius: 10px;
-  --album-art-size: 150px; /* größere Album-Art */
-  --widget-width: 640px; /* Breite des 16:9 Containers */
-  --widget-height: calc(var(--widget-width) * 9 / 16); /* Höhe automatisch für 16:9 */
+  --album-art-size: 150px; /* maximale Größe für Album-Art */
+  --widget-max-width: 640px; /* maximale Breite des Widgets */
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-}
-
-#statusContainer {
-  font-weight: 500;
-  font-size: 30px;
-  text-align: center;
-  background-color: #D12025;
-  color: white;
-  padding: 10px;
-  border-radius: var(--corner-radius);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #000;
 }
 
 #mainContainer {
   position: relative;
-  width: var(--widget-width);
-  height: var(--widget-height);
-  margin: 0 auto;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 90%;
+  max-width: var(--widget-max-width);
+  aspect-ratio: 16 / 9; /* 16:9 Verhältnis */
   display: flex;
   flex-direction: column; /* Text oben, Album-Art unten */
-  align-items: center;
   justify-content: flex-start;
-  filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.7));
-  background: rgba(0,0,0,0.1); /* optional leichter Hintergrund */
-  border-radius: var(--corner-radius);
-  opacity: 1;
-  transition: all 0.5s ease;
-}
-
-#songInfoBox {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  z-index: 2;
-  text-align: center;
-  margin-bottom: 10px; /* Abstand zum Album-Art */
-}
-
-#songInfo {
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: var(--corner-radius);
-  padding: 20px;
-  width: 90%;
-  height: auto;
-}
-
-#artistLabel {
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 5px;
-}
-
-#songLabel {
-  font-weight: bold;
-  font-size: 24px;	
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-#albumArtBox {
-  width: var(--album-art-size);
-  height: var(--album-art-size);
   border-radius: var(--corner-radius);
   overflow: hidden;
-  margin-top: 10px; /* Abstand vom Text */
-}
-
-#albumArt {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.1); /* optional leichter Hintergrund */
 }
 
 #backgroundArt {
@@ -97,17 +35,53 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: var(--corner-radius);
-  overflow: hidden;
+  object-fit: cover;
+  filter: blur(20px);
   z-index: 1;
-  opacity: 0.8;
 }
 
-#backgroundImage {
+#songInfoBox {
+  position: relative;
+  z-index: 2; /* über Hintergrund */
+  width: 90%;
+  text-align: center;
+  padding: 10px 20px;
+  background: rgba(0,0,0,0.5);
+  border-radius: var(--corner-radius);
+  margin-top: 10px;
+}
+
+#songLabel {
+  font-weight: bold;
+  font-size: 2vw; /* skaliert mit Containerbreite */
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#artistLabel {
+  font-size: 1.5vw; /* skaliert mit Containerbreite */
+  font-weight: 400;
+  color: #fff;
+  margin-top: 5px;
+}
+
+#albumArtBox {
+  width: 30%; /* max 30% der Containerbreite */
+  max-width: var(--album-art-size);
+  aspect-ratio: 1 / 1;
+  border-radius: var(--corner-radius);
+  overflow: hidden;
+  margin-top: auto; /* ganz unten unter Text */
+  margin-bottom: 10px;
+  z-index: 2;
+}
+
+#albumArt {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(20px);
 }
 
 #progressBg {
@@ -115,7 +89,8 @@ body {
   height: 5px;
   background-color: #1F1F1F;
   border-radius: 5px;
-  margin-top: 10px;
+  margin: 10px auto 5px auto;
+  z-index: 2;
 }
 
 #progressBar {
@@ -124,15 +99,17 @@ body {
   border-radius: 5px;
   background-color: #ffffff;
   transition: all 1s ease;
+  z-index: 2;
 }
 
 #times {
   width: 90%;
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 1vw;
   font-weight: 700;
-  margin-top: 5px;
+  margin-bottom: 10px;
+  z-index: 2;
 }
 
 .text-show {
