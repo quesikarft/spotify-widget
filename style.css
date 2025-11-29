@@ -100,11 +100,11 @@ body {
 }
 
 #backgroundArt {
-  position: absolute;
-  width: 100%;          /* volle Breite des Containers */
-  aspect-ratio: 16 / 9; /* Höhe automatisch für 16:9 */
-  border-radius: var(--corner-radius);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;  /* statt absolute, damit es das Parent-Verhältnis einhält */
   overflow: hidden;
+  border-radius: var(--corner-radius);
   z-index: -1;
   opacity: 0.9;
 }
