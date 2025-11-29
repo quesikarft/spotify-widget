@@ -87,7 +87,7 @@ body {
 #songInfoBox {
     position: relative;
     width: 100%;
-    min-height: 120px;
+    min-height: 520px;
     padding: 60px 20px 20px 20px;
     border-radius: var(--corner-radius);
     color: white;
