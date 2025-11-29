@@ -69,7 +69,8 @@ body {
 #songInfoBox {
 	position: relative;
 	color: white;
-	width: calc(100% - 125px);
+	width: 125px;
+	height: 125px;
 	display: flex;
 	flex-direction: column;
 	flex: 0 1 auto;
