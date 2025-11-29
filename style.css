@@ -23,24 +23,17 @@ body {
 }
 
 #mainContainer {
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-	height: var(--album-art-size);
-	margin: 20px;
-	filter: drop-shadow(15px 15px 7px rgba(0, 0, 0, 1));
-	width: 100%;
-	max-width: 500px;
-	bottom: calc(50% - 20px);
-	left: 50%;
-	opacity: 0;
-	transition: all 0.5s ease;
-	width: 90%;            /* z.B. 90% der Fensterbreite */
-  	max-width: 640px;      /* optional maximale Breite */
-  	aspect-ratio: 16 / 9;  /* Höhe passt automatisch */
-  	position: relative;
-  	display: flex;
-  	flex-direction: column;
-  	align-items: center;
-  	justify-content: space-between;
+    width: 90%;           /* Containerbreite */
+    max-width: 640px;     /* maximale Breite */
+    aspect-ratio: 16 / 9; /* Höhe wird automatisch passend */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    filter: drop-shadow(15px 15px 7px rgba(0, 0, 0, 1));
+    opacity: 0;
 }
 
 #albumArtBox {
