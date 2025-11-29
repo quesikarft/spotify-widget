@@ -1,194 +1,146 @@
 * {
-	--corner-radius: 10px;
-	--album-art-size: 100px;
+  --corner-radius: 10px;
+  --album-art-size: 150px; /* größere Album-Art */
+  --widget-width: 640px; /* Breite des 16:9 Containers */
+  --widget-height: calc(var(--widget-width) * 9 / 16); /* Höhe automatisch für 16:9 */
 }
 
 body {
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
 #statusContainer {
-	font-weight: 500;
-	font-size: 30px;
-	text-align: center;
-	background-color: #D12025;
-	color: white;
-	padding: 10px;
-	border-radius: 10px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	opacity: 0;
+  font-weight: 500;
+  font-size: 30px;
+  text-align: center;
+  background-color: #D12025;
+  color: white;
+  padding: 10px;
+  border-radius: var(--corner-radius);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
 
 #mainContainer {
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-	display: flex;
-	position: absolute;
-	height: 200px;
-	width: 10px;
-	margin: 20px;
-	filter: drop-shadow(15px 15px 7px rgba(0, 0, 0, 1));
-	width: 100%;
-	max-width: 500px;
-	bottom: calc(50% - 20px);
-	left: 50%;
-	opacity: 0;
-	transition: all 0.5s ease;
-}
-
-#albumArtBox {
-	background: rgba(0, 0, 0, 0.5);
-	position: relative;
-	border-radius: var(--corner-radius);
-	overflow: hidden;
-	margin: 0px 8px 0px 0px;
-	object-fit: cover;
-	width: var(--album-art-size);
-}
-
-#albumArt {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0%;
-	object-fit: cover;
-}
-#albumArtBack {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-#albumArtBox img {
-	 width: 100%;
-	height: 100%;
-	object-fit: cover;
+  position: relative;
+  width: var(--widget-width);
+  height: var(--widget-height);
+  margin: 0 auto;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column; /* Text oben, Album-Art unten */
+  align-items: center;
+  justify-content: flex-start;
+  filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.7));
+  background: rgba(0,0,0,0.1); /* optional leichter Hintergrund */
+  border-radius: var(--corner-radius);
+  opacity: 1;
+  transition: all 0.5s ease;
 }
 
 #songInfoBox {
-	position: relative;
-	color: white;
-	height: 1000px;
-	width: calc(100% - 125px);
-	display: flex;
-	flex-direction: column;
-	flex: 0 1 auto;
-	justify-content: center;
-	z-index: 1;
-	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-	overflow: hidden;
-	z-index: 4;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 10px; /* Abstand zum Album-Art */
 }
 
 #songInfo {
-	background: rgba(0, 0, 0, 0.5);
-	opacity: 0.9;
-	position: relative;
-	border-radius: var(--corner-radius);
-	padding: 0px 20px;
-	height: 100%;
-	overflow: hidden;
-}
-
-#IAmRunningOutOfNamesForTheseBoxes {
-	position: absolute;
-	width: calc(100% - 40px);
-	position: absolute;
-	top: 50%;
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-}
-
-#backgroundArt {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	border-radius: var(--corner-radius);
-	overflow: hidden;
-	z-index: -1;
-	opacity: 0.9;
-}
-
-#backgroundImage {
-	filter: blur(20px);
-	position: absolute;
-	width: 140%;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
-}
-
-#backgroundImageBack {
-	filter: blur(20px);
-	position: absolute;
-	width: 140%;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	z-index: -1;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--corner-radius);
+  padding: 20px;
+  width: 90%;
+  height: auto;
 }
 
 #artistLabel {
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1;
-	white-space: nowrap;
-	transition: all 0.5s ease;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
 }
 
 #songLabel {
-	font-weight: bold;
-	font-size: 20px;	
-	width: calc(100%);
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	transition: all 0.5s ease;
+  font-weight: bold;
+  font-size: 24px;	
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#albumArtBox {
+  width: var(--album-art-size);
+  height: var(--album-art-size);
+  border-radius: var(--corner-radius);
+  overflow: hidden;
+  margin-top: 10px; /* Abstand vom Text */
+}
+
+#albumArt {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#backgroundArt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--corner-radius);
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+#backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(20px);
 }
 
 #progressBg {
-	margin-top: 15px;
-	width: 100%;
-	height: auto;
-	border-radius: 5px;
-	background-color: #1F1F1F;
+  width: 90%;
+  height: 5px;
+  background-color: #1F1F1F;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 #progressBar {
-	border-radius: 5px;
-	height: 5px;
-	width: 20%;
-	background-color: #ffffff;
-	margin: 10px 0px;
-	transition: all 1s ease;
+  width: 0%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  transition: all 1s ease;
 }
 
 #times {
-	position: relative;
-	height: 16px;
-	font-size: 16px;
-	font-weight: 700;
-	line-height: 2.2;
-}
-
-#progressTime {
-	position: absolute;
-}
-
-#timeRemaining {
-	position: absolute;
-	width: 100%;
-	text-align: right;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 5px;
 }
 
 .text-show {
-	opacity: 1;
-	transition: all 0.25s ease;
+  opacity: 1;
+  transition: all 0.25s ease;
 }
 
 .text-fade {
-	opacity: 0;
-	transition: all 0.25s ease;
+  opacity: 0;
+  transition: all 0.25s ease;
 }
