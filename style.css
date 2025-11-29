@@ -37,13 +37,16 @@ body {
 }
 
 #albumArtBox {
-	background: rgba(0, 0, 0, 0.5);
-	position: relative;
-	border-radius: var(--corner-radius);
-	overflow: hidden;
-	margin: 0px 8px 0px 0px;
-	object-fit: cover;
-	width: var(--album-art-size);
+    position: absolute; /* über dem Song-Info-Box */
+    top: -20px;         /* nach oben verschoben */
+    left: 50%;          /* zentriert */
+    transform: translateX(-50%); /* perfekt zentriert */
+    z-index: 5;          /* über Song-Info */
+    width: var(--album-art-size);
+    height: var(--album-art-size);
+    border-radius: var(--corner-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.7);
 }
 
 #albumArt {
