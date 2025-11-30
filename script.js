@@ -196,6 +196,10 @@ function UpdateAlbumArt(div, imgsrc) {
 			div.setAttribute("class", "text-show");
 		}, 500);
 	}
+	const rightLine = document.getElementById("backgroundImageRightLine");
+    if(rightLine.src != imgsrc){
+        rightLine.src = imgsrc;
+    }
 }
 
 
