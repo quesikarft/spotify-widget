@@ -189,18 +189,54 @@ function UpdateTextLabel(div, text) {
 }
 
 function UpdateAlbumArt(div, imgsrc) {
-	if (div.src != imgsrc) {
-		div.setAttribute("class", "text-fade");
-		setTimeout(() => {
-			div.src = imgsrc;
-			div.setAttribute("class", "text-show");
-		}, 500);
-	}
-	const rightLine = document.getElementById("backgroundImageRightLine");
-    if(rightLine.src != imgsrc){
-        rightLine.src = imgsrc;
+    // Hauptbild animiert wechseln
+    if (div.src !== imgsrc) {
+        div.classList.remove("text-show");
+        div.classList.add("text-fade");
+
+        setTimeout(() => {
+            div.src = imgsrc;
+            div.classList.remove("text-fade");
+            div.classList.add("text-show");
+        }, 500);
     }
+
+    // Rechte Linie (vorne)
+    const rightLine = document.getElementById("backgroundImageRightLine");
+    if (rightLine && !rightLine.src.endsWith(imgsrc)) {
+        rightLine.classList.remove("text-show");
+        rightLine.classList.add("text-fade");
+
+        setTimeout(() => {
+            rightLine.src = imgsrc;
+            rightLine.classList.remove("text-fade");
+            rightLine.classList.add("text-show");
+        }, 500);
+    }
+
+    // Rechte Linie (hinten)
+    const rightLineBack = document.getElementById("backgroundImageRightLineBack");
+    if (rightLineBack) {
+        setTimeout(() => {
+            rightLineBack.src = imgsrc;
+        }, 1000);
+    }
+
+    // Optional: Hintergrund-Back Bilder synchron aktualisieren
+    const backDivs = [
+        document.getElementById("albumArtBack"),
+        document.getElementById("backgroundImageBack")
+    ];
+
+    backDivs.forEach(backDiv => {
+        if (backDiv) {
+            setTimeout(() => {
+                backDiv.src = imgsrc;
+            }, 1000);
+        }
+    });
 }
+
 
 
 
