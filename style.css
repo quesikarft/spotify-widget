@@ -117,7 +117,7 @@ body {
     border-radius: var(--corner-radius);
     overflow: hidden;
     opacity: 0.9;
-    transform: translate(412.5px, 0%);
+    transform: translate(415px, 0%);
 }
 #backgroundImageRightLine,
 #backgroundImageRightLineBack {
