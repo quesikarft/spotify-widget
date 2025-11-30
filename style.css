@@ -44,9 +44,9 @@ body {
 	margin: 0px 8px 0px 0px;
 	object-fit: cover;
 	width: 100px;
-    top: 50%;
-    transform: translate(250%, -60%);
-    z-index: 20;
+	top: 50%;
+	transform: translate(525%, 0%) scale(1);
+	z-index: 10;
 }
 
 #albumArt {
@@ -73,7 +73,7 @@ body {
 	justify-content: center;
 	z-index: 1;
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-	z-index: 4;
+	z-index: 5;
 }
 
 #songInfo {
@@ -84,16 +84,15 @@ body {
 	padding: 0px 20px;
 	height: 100%;
 	overflow: hidden;
-	z-index: 40;
 }
 
 #IAmRunningOutOfNamesForTheseBoxes {
-	position: absolute;
-	width: calc(100% - 40px);
-	position: absolute;
-	top: 50%;
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
+    position: relative;
+    width: calc(100% - 40px);
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translate(0%, -50%);
+    z-index: 100;
 }
 
 #backgroundArt {
@@ -112,13 +111,13 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 120px;
+    width: 105px;
     height: 600%;
     z-index: -1;
     border-radius: var(--corner-radius);
     overflow: hidden;
     opacity: 0.9;
-    transform: translate(340%, 0%);
+    transform: translate(415px, 0%);
 }
 #backgroundImageRightLine,
 #backgroundImageRightLineBack {
@@ -137,6 +136,16 @@ body {
     height: 100%;
     object-fit: cover;
     filter: blur(20px);
+}
+#backgroundImageRightLine {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;        /* Breite der Linie, anpassen nach Wunsch */
+    height: 100%;
+    object-fit: cover;
+    filter: blur(20px);
+    z-index: 2;
 }
 
 #backgroundImageBack {
@@ -167,6 +176,7 @@ body {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	transition: all 0.5s ease;
+    z-index: 100;
 }
 
 #progressBg {
