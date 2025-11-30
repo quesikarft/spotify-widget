@@ -243,9 +243,9 @@ window.addEventListener("resize", resize);
 
 resize();
 function resize() {
-	outer.style.transform = 'translate(-50%, 50%) scale(1)';
+	const scale = window.innerWidth / maxWidth*0.4;
+	outer.style.transform = 'translate(-50%, 50%) scale(' + scale + ')';
 }
-
 
 /////////////////////////////////////////////////////////////////////
 // IF THE USER PUT IN THE HIDEALBUMART PARAMATER, THEN YOU SHOULD  //
