@@ -111,7 +111,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 105px;
+    width: 102.5px;
     height: 600%;
     z-index: -1;
     border-radius: var(--corner-radius);
